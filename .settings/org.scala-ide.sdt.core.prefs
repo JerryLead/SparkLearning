@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+organizeimports.expandcollapse=expand
+organizeimports.groups=java$scala$org$com
+organizeimports.scalapackage=false
+organizeimports.wildcards=scalaz$scalaz.Scalaz

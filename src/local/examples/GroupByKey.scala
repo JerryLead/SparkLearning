@@ -8,9 +8,11 @@ object GroupByKey {
    def main(args: Array[String]) {
     
     val sc = new SparkContext("local", "GroupByKey Test") 
-	val data = Array[(String, Int)](("A", 1), ("B", 2),
-		    						 ("B", 3), ("C", 4),
-		    						 ("C", 5), ("C", 6)
+	val data = Array[(Int, Char)]((1, 'a'), (2, 'b'),
+		    						 (3, 'c'), (4, 'd'),
+		    						 (5, 'e'), (3, 'f'),
+		    						 (2, 'g'), (1, 'h')
+		    						 
 		    						)    							
 	val pairs = sc.parallelize(data, 3)
 	
@@ -21,6 +23,8 @@ object GroupByKey {
 	// 
 	// (A,ArrayBuffer(1))
 	// (C,ArrayBuffer(4, 5, 6))
-	result.foreach(println)
+	//result.foreach(println)
+	result.foreachWith(i => i)((x, i) => println("[PartitionIndex " + i + "] " + x))
+	println(result.toDebugString)
   }
 }

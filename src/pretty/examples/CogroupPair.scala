@@ -24,13 +24,13 @@ object CogroupPair {
     val result1 = pairs1.cogroup(pairs2)
     result1.foreach(println)
     
-    val result2 = pairs1.cogroup(pairs2, pairs3)
-    result2.foreach(println)
-   
-    val result3 = pairs1.cogroup(pairs2, 1)
-    result3.foreachWith(i => i)((x, i) => println("[PartitionIndex " + i + "] " + x))
-    
-    val result4 = pairs1.cogroup(pairs2, new RangePartitioner(2, pairs1))
-    result4.foreachWith(i => i)((x, i) => println("[PartitionIndex " + i + "] " + x))
+//    val result2 = pairs1.cogroup(pairs2, pairs3)
+//    result2.foreach(println)
+//   
+//    val result3 = pairs1.cogroup(pairs2, 1)
+//    result3.foreachWith(i => i)((x, i) => println("[PartitionIndex " + i + "] " + x))
+//    
+//    val result4 = pairs1.cogroup(pairs2, new RangePartitioner(2, pairs1))
+//    result4.foreachWith(i => i)((x, i) => println("[PartitionIndex " + i + "] " + x))
   }
 }

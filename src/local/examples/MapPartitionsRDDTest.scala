@@ -13,6 +13,7 @@ object MapPartitionsRDDTest {
 		val pairs = sc.parallelize(data, 3)
 		
 		val finalRDD = pairs.mapPartitions(iter => iter.filter(_._2 >= 2))
+		// val finalRDD2 = pairs.mapPartitionsWithIndex(f, preservesPartitioning)
 		
 		finalRDD.toArray().foreach(println)
 		

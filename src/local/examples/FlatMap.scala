@@ -15,5 +15,6 @@ object FlatMap {
 	val result = pairs.flatMap(T => (T._1 + T._2))
 	
 	result.foreach(println)
+
   }
 }
